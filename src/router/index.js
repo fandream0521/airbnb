@@ -1,9 +1,9 @@
 import { lazy } from "react"
 import { Navigate } from "react-router-dom"
 
-const Home = lazy(() => import("@/views/home/Home"));
-const Detail = lazy(() => import("@/views/detail/Detail"));
-const Entire = lazy(() => import("@/views/entire/Entire"));
+const Home = lazy(() => import("@/views/home"));
+const Detail = lazy(() => import("@/views/detail"));
+const Entire = lazy(() => import("@/views/entire"));
 
 const routes = [
   {
