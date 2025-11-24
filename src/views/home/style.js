@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 
 export const HomeWrapper = styled.div`
-  .cover {
-    img {
-      width: 100%;
-    }
+  main.home {
+    width: 1032px;
+    margin: 0 auto;
   }
 `

@@ -11,7 +11,7 @@ import theme from './assets/theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <BrowserRouter future={{"v7_relativeSplatPath": false, "v7_startTransition": false}}>
@@ -19,5 +19,5 @@ root.render(
         </BrowserRouter>
       </Provider>
     </ThemeProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
