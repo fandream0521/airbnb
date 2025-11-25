@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.div`
   main.home {
-    width: 1032px;
+    width: 75%;
     margin: 0 auto;
   }
 `

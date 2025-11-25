@@ -7,6 +7,7 @@ export const AppHeaderWrapper = styled.div`
     position: fixed;
     left: 0;
     right: 0;
+    z-index: 10;
   ` : ''}
   display: flex;
   justify-content: space-between;

@@ -9,7 +9,8 @@ module.exports = {
     alias: {
       "@": pathResolve("src"),
       "components": pathResolve("src/components"),
-      "utils": pathResolve("src/utils")
+      "utils": pathResolve("src/utils"),
+      // '@mui/styled-engine': '@mui/styled-engine-sc'
     }
   },
   plugins: [

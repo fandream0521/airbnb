@@ -41,6 +41,7 @@ export default function Home() {
       <HomeBanner />
       <main className="home">
         <HouseList listInfo={highScoreInfo} />
+        <HouseList listInfo={goodPriceInfo} />
       </main>
     </HomeWrapper>
   )
