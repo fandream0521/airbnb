@@ -6,20 +6,18 @@ import AppHeader from '@/components/app-header';
 import HomeBanner from './c-cpns/home-banner';
 import usePosition from '@/hooks/usePosition';
 
-import { fetchDiscountInfo, fetchGoodPriceInfo, fetchHighScoreInfo, fetchHotRecommendInfo, fetchPlusInfo } from '@/store/modules/home';
-import HouseList from '@/components/app-home-house-list';
+import { fetchHomeDataInfo } from '@/store/modules/home';
+import HomeSectionV1 from './c-cpns/home-section-v1';
+import HomeSectionV2 from './c-cpns/home-section-v2';
+import { hasProperty } from '@/utils/object';
 
 export default function Home() {
   const [isReverse, setReverse] = useState(1);
   const { y } = usePosition();
   const dispatch = useDispatch();
-  const {goodPriceInfo, discountInfo, hotRecommendInfo, highScoreInfo, plusInfo} = useSelector(state => state.home)
+  const {goodPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo} = useSelector(state => state.home)
 
-  console.log(goodPriceInfo);
   console.log(discountInfo);
-  console.log(hotRecommendInfo);
-  console.log(highScoreInfo);
-  console.log(plusInfo);
   useEffect(() => {
     if (y > 0) {
       setReverse(0);
@@ -29,19 +27,17 @@ export default function Home() {
   }, [y])
   
   useEffect(() => {
-    dispatch(fetchGoodPriceInfo());
-    dispatch(fetchDiscountInfo());
-    dispatch(fetchHighScoreInfo());
-    dispatch(fetchHotRecommendInfo());
-    dispatch(fetchPlusInfo())
+    dispatch(fetchHomeDataInfo());
   }, [dispatch])
   return (
     <HomeWrapper>
       <AppHeader fixed={1} reverse={isReverse}/>
       <HomeBanner />
       <main className="home">
-        <HouseList listInfo={highScoreInfo} />
-        <HouseList listInfo={goodPriceInfo} />
+        {hasProperty(discountInfo) && (<HomeSectionV2 listInfo={discountInfo} />)}
+        {hasProperty(hotRecommendInfo) && (<HomeSectionV2 listInfo={hotRecommendInfo} />)}
+        {hasProperty(highScoreInfo) && (<HomeSectionV1 listInfo={highScoreInfo} />)}
+        {hasProperty(goodPriceInfo) && (<HomeSectionV1 listInfo={goodPriceInfo} />)}
       </main>
     </HomeWrapper>
   )

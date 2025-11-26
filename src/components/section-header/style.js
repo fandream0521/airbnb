@@ -10,11 +10,12 @@ export const SectionHeaderWrapper = styled.header`
 
     .title {
       font-size: 24px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
       font-size: 16px;
-      margin: 14px 0;
+      margin: 10px 0;
       font-weight: 400;
     }
 
