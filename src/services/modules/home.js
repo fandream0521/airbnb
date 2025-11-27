@@ -29,3 +29,9 @@ export function getPlusInfo() {
     url: "/home/plus"
   })
 }
+
+export function getLongFor() {
+  return airRequest.get({
+    url: "/home/longfor"
+  })
+}

@@ -10,12 +10,13 @@ import { fetchHomeDataInfo } from '@/store/modules/home';
 import HomeSectionV1 from './c-cpns/home-section-v1';
 import HomeSectionV2 from './c-cpns/home-section-v2';
 import { hasProperty } from '@/utils/object';
+import HomeLongFor from './c-cpns/home-long-for';
 
 export default function Home() {
   const [isReverse, setReverse] = useState(1);
   const { y } = usePosition();
   const dispatch = useDispatch();
-  const {goodPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo} = useSelector(state => state.home)
+  const {goodPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo, longFor} = useSelector(state => state.home)
 
   console.log(discountInfo);
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function Home() {
       <main className="home">
         {hasProperty(discountInfo) && (<HomeSectionV2 listInfo={discountInfo} />)}
         {hasProperty(hotRecommendInfo) && (<HomeSectionV2 listInfo={hotRecommendInfo} />)}
+        {hasProperty(longFor) && (<HomeLongFor listInfo={longFor} />)}
         {hasProperty(highScoreInfo) && (<HomeSectionV1 listInfo={highScoreInfo} />)}
         {hasProperty(goodPriceInfo) && (<HomeSectionV1 listInfo={goodPriceInfo} />)}
       </main>
