@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const SectionFooter = memo(({name, type}) => {
   const navigate = useNavigate();
   function handleMoreClick() {
-    navigate("/entire?type=" + type)
+    navigate(`/entire?type=${type}&name=${name}`)
   }
   return (
     <SectionFooterWrapper>
