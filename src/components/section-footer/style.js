@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionFooterWrapper = styled.footer`
-  margin-top: 10px;
+  margin: 10px 0;
   display: flex;
   .info {
     display: flex;

@@ -6,7 +6,7 @@ import SectionTabs from '@/components/section-tabs'
 import SectionFooter from '@/components/section-footer'
 
 const HomeSectionV2 = memo(({listInfo}) => {
-  const { title, subtitle, dest_list, dest_address} = listInfo;
+  const { title, subtitle, dest_list, dest_address, type} = listInfo;
   const tabNames = dest_address.map(address => address.name);
   const [name, setName] = useState(tabNames[0]);
 
@@ -20,7 +20,7 @@ const HomeSectionV2 = memo(({listInfo}) => {
       <SectionHeader title={title} subtitle={subtitle}/>
       <SectionTabs tabNames={tabNames} onTabClick={handleTabClick}/>
       <SectionRooms list={dest_list[name]} col={3}/>
-      <SectionFooter name={name} />
+      <SectionFooter name={name} type={type}/>
     </HomeSectionV2Wrapper>
   )
 })
