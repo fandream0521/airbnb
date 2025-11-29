@@ -8,12 +8,108 @@ export const RoomItemWrapper = styled.div`
     padding: 66.66% 8px 0;
     border-radius: 3px;
     overflow: hidden;
-    img {
+    > img {
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
+    }
+
+    .slick {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+
+    &:hover .btns {
+        display: block;
+      }
+
+    .btns {
+      display: none;
+      position: absolute;
+      inset: 0;
+      z-index: 100;
+
+      color: white;
+      font-size: 25px;
+      
+
+      .left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 25%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to left, transparent, rgba(0, 0, 0, .4));
+      }
+
+      .right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 30%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, transparent, rgba(0, 0, 0, .5));
+      }
+    }
+
+    .indicator {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+
+      width: 100px;
+      margin: 0 auto;
+
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 26px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+
+          background-color: white;
+
+          transition: all .2s ease;
+        }
+        
+        &.active .dot{
+          width: 8px;
+          height: 8px;
+        }
+        
+      }
     }
   }
 

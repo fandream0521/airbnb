@@ -78,6 +78,7 @@ export const HeaderRightWrapper = styled.div`
       position: absolute;
       top: 120%;
       right: 0;
+      z-index: 100;
     }
   }
 `
