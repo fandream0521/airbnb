@@ -44,7 +44,7 @@ export const HeaderCenterWrapper = styled.div`
 
 
   .tabs-enter {
-    transform: scale(0.7) translateY(0) ;
+    transform: scale(0.7) translateY(-60px) ;
     opacity: 0;
   }
 
@@ -54,12 +54,12 @@ export const HeaderCenterWrapper = styled.div`
   }
 
   .tabs-enter-active {
-    transform: scale(1) translateY(80px) ;
+    transform: scale(1) translateY(0) ;
     opacity: 1;
   }
 
   .tabs-exit-active {
-    transform: scale(0.7) translateY(-80px) ;
+    transform: scale(0.7) translateY(-60px) ;
     opacity: 0;
   }
 
