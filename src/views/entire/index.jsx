@@ -26,7 +26,7 @@ export default function Entire() {
   }, [dispatch, curPage])
   return (
     <EntireWrapper>
-      <AppHeader />
+      <AppHeader reverse={0}/>
       <main className="entire">
         <EntireFilter />
         <EntireRooms list={list}/>

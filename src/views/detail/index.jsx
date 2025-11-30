@@ -9,8 +9,8 @@ export default function Detail() {
 
   console.log(detailInfo);
   return (
-    <DetailWrapper>
-      <AppHeader fixed={0}/>
+    <DetailWrapper >
+      <AppHeader fixed={0}  reverse={0}/>
       <main className="detail">
         {hasProperty(detailInfo) && <DetailPictures pictures={detailInfo.picture_urls}/>}
       </main>

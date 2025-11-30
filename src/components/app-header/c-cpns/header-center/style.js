@@ -17,22 +17,22 @@ export const HeaderCenterWrapper = styled.div`
 
 
   .bar-enter {
-    transform: scale(1.428) translateY(80px) ;
+    transform: translateY(60px) scale(1.428) ;
     opacity: 0;
   }
 
   .bar-exit {
-    transform: scale(1) translateY(0) ;
+    transform: translateY(0) scale(1) ;
     opacity: 1;
   }
 
   .bar-enter-active {
-    transform: scale(1) translateY(0) ;
+    transform: translateY(0) scale(1) ;
     opacity: 1;
   }
 
   .bar-exit-active {
-    transform: scale(1.428) translateY(80px) ;
+    transform: translateY(60px) scale(1.428) ;
     opacity: 0;
   }
 
@@ -44,22 +44,22 @@ export const HeaderCenterWrapper = styled.div`
 
 
   .tabs-enter {
-    transform: scale(0.7) translateY(-60px) ;
+    transform: translateY(-60px) scale(0.7) ;
     opacity: 0;
   }
 
   .tabs-exit {
-    transform: scale(1) translateY(0) ;
+    transform: translateY(0) scale(1) ;
     opacity: 1;
   }
 
   .tabs-enter-active {
-    transform: scale(1) translateY(0) ;
+    transform: translateY(0) scale(1) ;
     opacity: 1;
   }
 
   .tabs-exit-active {
-    transform: scale(0.7) translateY(-60px) ;
+    transform: translateY(-60px) scale(0.7) ;
     opacity: 0;
   }
 
