@@ -30,6 +30,26 @@ export const PictureBrowserWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
+    .pic-enter {
+      transform: translateX(${props => props.$isNext ? '100%' : '-100%'});
+    }
+    .pic-exit{
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .pic-enter-active{
+      transform: translateX(0);
+    }
+    .pic-exit-active{
+      transform: translateX(${props => props.$isNext ? '-100%' : '100%'});
+      opacity: 0;
+    }
+    .pic-enter-active,
+    .pic-exit-active{
+      transition: all .4s ease;
+    }
     .cover {
       max-width: 80%;
       height: 100%;

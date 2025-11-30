@@ -5,19 +5,24 @@ import Indictor from '../indicator'
 import IconArrowLeft from '@/assets/svg/icon-arrow-left'
 import IconArrowRight from '@/assets/svg/icon-arrow-right'
 import classNames from 'classnames'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const PictureBrowser = memo(({pictures, picIdx, onCloseClick}) => {
   const [curIdx, setCurIdx] = useState(picIdx);
   const [isShowList, setShowList] = useState(true);
+  const [isNext, setNext] = useState(true);
   const listRef = useRef(null);
   const listHeightRef = useRef(0);
+  const nodeRef = useRef(null);
 
   function handleArrowClick(isNext = true) {
     const length = pictures.length;
     if (isNext) {
       setCurIdx((curIdx + 1) % length)
+      setNext(true);
     } else {
       setCurIdx((curIdx - 1 + length) % length);
+      setNext(false);
     }
   }
 
@@ -33,14 +38,24 @@ const PictureBrowser = memo(({pictures, picIdx, onCloseClick}) => {
     setShowList(!isShowList);
   }
   return (
-    <PictureBrowserWrapper $isShowList={isShowList}>
+    <PictureBrowserWrapper $isShowList={isShowList} $isNext={isNext}>
       <div className="close" onClick={onCloseClick}>
         <CloseOutlined />
       </div>
       <div className="show-content">
-        <div className="cover">
-          <img src={pictures[curIdx]} alt="" />
-        </div>
+        <SwitchTransition mode='out-in'>
+          <CSSTransition 
+            key={curIdx} 
+            classNames='pic'
+            timeout={400}
+            nodeRef={nodeRef}
+            >
+            <div className="cover" ref={nodeRef}>
+              <img src={pictures[curIdx]} alt="" />
+            </div>
+          </CSSTransition>
+        </SwitchTransition>
+
         <div className="left" onClick={() => handleArrowClick(false)}>
           <IconArrowLeft size={100} />
         </div>

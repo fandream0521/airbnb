@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const DetailPicturesWrapper = styled.div`
 
-
+  height: 800px;
   .content {
+    height: 100%;
     display: flex;
     position: relative;
 
     img {
       width: 100%;
-      height: 100%;
+      object-fit: cover;
       transition: transform .3s ease;
     }
 
@@ -48,6 +49,7 @@ export const DetailPicturesWrapper = styled.div`
       .item {
         position: relative;
         width: 50%;
+        height: 50%;
         box-sizing: border-box;
         border: 1px solid black;
         overflow: hidden;

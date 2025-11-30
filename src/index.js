@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from '@/App';
 
@@ -14,9 +14,11 @@ root.render(
   // <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <BrowserRouter future={{"v7_relativeSplatPath": false, "v7_startTransition": false}}>
-          <App />
-        </BrowserRouter>
+        <Suspense fallback="loading">
+          <BrowserRouter future={{"v7_relativeSplatPath": false, "v7_startTransition": false}}>
+            <App />
+          </BrowserRouter>
+        </Suspense>
       </Provider>
     </ThemeProvider>
   // </React.StrictMode>
