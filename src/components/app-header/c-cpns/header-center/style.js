@@ -1,33 +1,70 @@
 import styled from "styled-components";
 
 export const HeaderCenterWrapper = styled.div`
-  .search {
+
+  .infos {
+
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    width: 300px;
-    padding: 6px 6px 6px 14px;
-    border: 1px solid #eee;
-    border-radius: 50px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 
-    ${props => props.theme.mixin.boxShadow}
-    
-
-    .text {
-      font-size: 14px;
-      font-weight: 600;
-      color: black
+    >* {
+      position: absolute;
+      top: 40px;
     }
+  }
 
-    .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 8px;
-      border-radius: 50%;
-      color: white;
-      background-color: var(--primary-color);
-    }
+
+  .bar-enter {
+    transform: translateY(80px) scale(1.428) ;
+    opacity: 0;
+  }
+
+  .bar-exit {
+    transform: translateY(0) scale(1) ;
+    opacity: 1;
+  }
+
+  .bar-enter-active {
+    transform: translateY(0) scale(1) ;
+    opacity: 1;
+  }
+
+  .bar-exit-active {
+    transform: translateY(80px) scale(1.428) ;
+    opacity: 0;
+  }
+
+  .bar-enter-active,
+  .bar-exit-active {
+    transition: all 250ms ease;
+  }
+
+
+
+  .tabs-enter {
+    transform: translateY(0) scale(0.7) ;
+    opacity: 0;
+  }
+
+  .tabs-exit {
+    transform: translateY(0) scale(1) ;
+    opacity: 1;
+  }
+
+  .tabs-enter-active {
+    transform: translateY(20px) scale(1) ;
+    opacity: 1;
+  }
+
+  .tabs-exit-active {
+    transform: translateY(-20px) scale(0.7) ;
+    opacity: 0;
+  }
+
+  .tabs-enter-active,
+  .tabs-exit-active {
+    transition: all 250ms ease;
   }
 `

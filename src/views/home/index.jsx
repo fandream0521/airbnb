@@ -19,7 +19,6 @@ export default function Home() {
   const dispatch = useDispatch();
   const {goodPriceInfo, highScoreInfo, discountInfo, hotRecommendInfo, longFor, plusInfo} = useSelector(state => state.home)
 
-  console.log(plusInfo);
   useEffect(() => {
     if (y > 0) {
       setReverse(0);
