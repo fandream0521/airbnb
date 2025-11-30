@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
 export const DetailPicturesWrapper = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-    transition: transform .3s ease;
-  }
 
-  .mask {
-    background: rgba(0, 0, 0, 0);
-    transition: background-color .3s ease;
-  }
 
   .content {
     display: flex;
     position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: transform .3s ease;
+    }
+
+    .mask {
+      background: rgba(0, 0, 0, 0);
+      transition: background-color .3s ease;
+    }
     
     &:hover .mask {
       position: absolute;

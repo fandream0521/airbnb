@@ -10,7 +10,8 @@ const RoomItem = memo(({item, onItemClick}) => {
   const slickRef = useRef();
   const [curIdx, setCurIdx] = useState(0);
 
-  function handleBtnClick(isRight = false) {
+  function handleBtnClick(e, isRight = false) {
+    e.stopPropagation();
     if (isRight) {
       slickRef.current.next();
     } else {
@@ -43,10 +44,10 @@ const RoomItem = memo(({item, onItemClick}) => {
                 }
               </Carousel>
               <div className="btns">
-                <div className="left" onClick={() => handleBtnClick()}>
+                <div className="left" onClick={(e) => handleBtnClick(e)}>
                   <IconArrowLeft size={30}/>
                 </div>
-                <div className="right" onClick={() => handleBtnClick(true)}>
+                <div className="right" onClick={(e) => handleBtnClick(e,true)}>
                   <IconArrowRight size={30}/>
                 </div>
               </div>

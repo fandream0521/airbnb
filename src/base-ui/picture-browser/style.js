@@ -8,22 +8,37 @@ export const PictureBrowserWrapper = styled.div`
   flex-flow: column;
   justify-content: center;
 
-  padding: 50px 0;
   background-color: black;
 
+  padding-bottom: 60px;
+
   .close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    height: 100px;
+    padding: 0 20px;
     font-size: 40px;
     color: white;
   }
 
   .show-content {
+    flex: 1;
     position: relative;
-    .screen {
-      width: 60%;
-      margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    .cover {
+      max-width: 80%;
+      height: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+      }
     }
 
     .left,.right {
@@ -46,7 +61,7 @@ export const PictureBrowserWrapper = styled.div`
 
 
   .indicator {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 
     .desc {
